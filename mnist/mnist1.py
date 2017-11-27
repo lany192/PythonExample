@@ -1,9 +1,10 @@
 #!/usr/bin/env python  
 # -*- coding: UTF-8 -*-
 
-""" 
+"""
+官方的手写例子，识别率较低
 @author: Lany 
-@file: Hello.py 
+@file: mnist1.py
 @time: 2017/9/25 0025 14:16 
 """
 import tensorflow as tf
