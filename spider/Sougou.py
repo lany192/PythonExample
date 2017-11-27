@@ -10,7 +10,7 @@ import requests
 import urllib
 from bs4 import BeautifulSoup
 
-res = requests.get('http://www.baidu.com')
+res = requests.get('http://image.baidu.com/')
 res.encoding = "utf-8"
 soup = BeautifulSoup(res.text, 'html.parser')
 print(soup.select('img'))
