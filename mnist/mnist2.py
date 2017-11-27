@@ -11,7 +11,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
 # MNIST 数据集相关的常数
-INPUT_NODE = 784  # 输入层的节点数。对于 MNIST 数据集，就等于图片的像素
+INPUT_NODE = 28 * 28  # 输入层的节点数。对于 MNIST 数据集，就等于图片的像素
 OUTPUT_NODE = 10  # 输出层的节点数。这个等于类别的数目。因为在 MNIST 的数据集中需要区分的是 0~9 这 10 个数字，所以这里输出层的节点数为 10
 
 # 配置神经网络的参数
@@ -20,7 +20,7 @@ BATCH_SIZE = 100  # 一个训练 batch 中的训练数据个数。数字越小�
 LEARNING_RATE_BASE = 0.8  # 基础的学习率
 LEARNING_RATE_DECAY = 0.99  # 学习率的衰减率
 REGULARIZATION_RATE = 0.0001  # 描述模型复杂度的正则化项在损失函数中的系数
-TRAINING_STEPS = 30000  # 训练轮数
+TRAINING_STEPS = 20000  # 训练轮数
 MOVING_AVERAGE_DECAY = 0.99  # 滑动平均衰减率
 
 
