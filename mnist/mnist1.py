@@ -40,4 +40,5 @@ for i in range(1000):  # 训练1000次
 # 计算训练精度
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-print(sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels}))  # 运行精度图，x和y_从测试手写图片中取值
+result = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+print("识别率:", result)  # 运行精度图，x和y_从测试手写图片中取值
