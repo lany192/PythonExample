@@ -90,8 +90,7 @@ for i in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
     if i % 50 == 0:
-        print(compute_accuracy(
-            mnist.test.images, mnist.test.labels))
+        print("识别率:", compute_accuracy(mnist.test.images, mnist.test.labels))
 
 constant_graph = graph_util.convert_variables_to_constants(sess, sess.graph_def, ['input', 'keep_prob', 'softmax'])
 with tf.gfile.FastGFile('mnist.pb', mode='wb') as f:
