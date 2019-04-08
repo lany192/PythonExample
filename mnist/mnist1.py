@@ -43,8 +43,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 result = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
 print("识别率:", result)  # 运行精度图，x和y_从测试手写图片中取值
 
-
 # 定义模型存储的位置
-OUT_MODEL_DIR = 'output'
+OUT_MODEL_DIR = 'model'
 saver = tf.train.Saver()
-saver.save(sess, OUT_MODEL_DIR + '/model')
+saver.save(sess, OUT_MODEL_DIR + '/mnist1.ckpt')

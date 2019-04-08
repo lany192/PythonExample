@@ -20,7 +20,7 @@ BATCH_SIZE = 100  # 一个训练 batch 中的训练数据个数。数字越小�
 LEARNING_RATE_BASE = 0.8  # 基础的学习率
 LEARNING_RATE_DECAY = 0.99  # 学习率的衰减率
 REGULARIZATION_RATE = 0.0001  # 描述模型复杂度的正则化项在损失函数中的系数
-TRAINING_STEPS = 20000  # 训练轮数
+TRAINING_STEPS = 6000  # 训练轮数
 MOVING_AVERAGE_DECAY = 0.99  # 滑动平均衰减率
 
 
@@ -139,6 +139,11 @@ def train(mnist):
         # 在训练结束后，在测试数据集行检测神经网络模型的最终正确率
         test_acc = sess.run(accuracy, feed_dict=test_feed)
         print("After %d training step(s), test accuracy using average model is %g" % (TRAINING_STEPS, test_acc))
+
+        # 定义模型存储的位置
+        OUT_MODEL_DIR = 'model'
+        saver = tf.train.Saver()
+        saver.save(sess, OUT_MODEL_DIR + '/mnist2.ckpt')
 
 
 # 主程序入口
