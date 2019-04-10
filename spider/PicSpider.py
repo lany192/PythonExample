@@ -4,7 +4,9 @@ import requests
 
 
 def get_pic_url(url):
-    html = requests.get(url).text
+    res = requests.get(url)
+    res.encoding = "utf-8"
+    html = res.text
     pic_url = re.findall(r'https*://[^\s]*?\.jpg', html, re.S)
     print(pic_url)
     # for key in pic_url:
