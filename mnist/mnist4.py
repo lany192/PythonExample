@@ -1,5 +1,7 @@
 import tensorflow as tf  # 深度学习库，Tensor 就是多维数组
 
+print('当前tensortflow版本:{0}'.format(tf.__version__))
+print('当前keras版本:{0}'.format(tf.keras.__version__))
 mnist = tf.keras.datasets.mnist  # mnist 是 28x28 的手写数字图片和对应标签的数据集
 (x_train, y_train), (x_test, y_test) = mnist.load_data()  # 分割数据集
 
