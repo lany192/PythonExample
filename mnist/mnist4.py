@@ -24,3 +24,6 @@ model.fit(x_train, y_train, epochs=3)  # 训练模型
 val_loss, val_acc = model.evaluate(x_test, y_test)  # 评估模型对样本数据的输出结果
 print('模型的损失值:', val_loss)
 print('模型的准确度:', val_acc)
+# 保存模型
+OUT_MODEL_DIR = 'model'
+model.save(OUT_MODEL_DIR + '/mnist4.h5')

@@ -47,10 +47,13 @@ model.compile(loss=keras.losses.categorical_crossentropy,
 # 自动完成模型的训练过程
 model.fit(X_train, Y_train,  # 训练集
           batch_size=128,  # batchsize
-          epochs=20,  # 训练轮数
+          epochs=10,  # 训练轮数
           validation_data=(X_test, Y_test))  # 验证集
 
 # 打印运行结果，即损失和准确度
 val_loss, val_acc = model.evaluate(X_test, Y_test)  # 评估模型对样本数据的输出结果
 print('模型的损失值:', val_loss)
 print('模型的准确度:', val_acc)
+# 保存模型
+OUT_MODEL_DIR = 'model'
+model.save(OUT_MODEL_DIR + '/mnist5.h5')
