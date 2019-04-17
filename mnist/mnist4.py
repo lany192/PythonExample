@@ -25,5 +25,14 @@ val_loss, val_acc = model.evaluate(x_test, y_test)  # 评估模型对样本数�
 print('模型的损失值:', val_loss)
 print('模型的准确度:', val_acc)
 # 保存模型
-OUT_MODEL_DIR = 'model'
-model.save(OUT_MODEL_DIR + '/mnist4.h5')
+# OUT_MODEL_DIR = 'model'
+# model.save(OUT_MODEL_DIR + '/mnist4.h5')
+
+# Save tf.keras model in HDF5 format.
+keras_file = "mnist4.h5"
+tf.keras.models.save_model(model, keras_file)
+
+# Convert to TensorFlow Lite model.
+converter = tf.lite.TFLiteConverter.from_keras_model_file(keras_file)
+tflite_model = converter.convert()
+open("mnist4.tflite", "wb").write(tflite_model)
