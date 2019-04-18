@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from pylab import mpl
 
-# 设置字体，这样才能显示中文
+# 全局设置字体
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 
 # 绘制散点图(传如一对x和y坐标，在指定位置绘制一个点)
